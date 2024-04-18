@@ -1,0 +1,20 @@
+{
+  "startTime": 0,
+  "endTime": 100,
+  "reportProgress": true,
+  "liveLogInterval": 0,
+  "logVariables": {
+    "{SimpleCar2}.SimpleCar2": [
+          "speed"
+        ],
+        "{SimpleCar1}.SimpleCar1": [
+          "speed"
+        ],
+        "{SimpleCar3}.SimpleCar3": [
+          "speed"
+        ],
+        "{LeadCar}.LeadCar": [
+          "speed"
+        ]
+  }
+}

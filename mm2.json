@@ -1,0 +1,119 @@
+{
+  "fmus": {
+    "{SimpleCar1}": "Simple_car_01.fmu",
+    "{SimpleCar2}": "Simple_car_02.fmu",
+    "{SimpleCar3}": "Simple_car_03.fmu",
+    "{LeadCar}": "LeadCar.fmu",
+    "{Controller1}": "__caccAlg_01.fmu",
+    "{C1}": "__caccAlg_01.fmu",
+    "{Controller2}": "__caccAlg_02.fmu",
+    "{Controller3}": "__caccAlg_03.fmu"
+  },
+  "connections": {
+    "{SimpleCar1}.SimpleCar1.speed": [
+      "{Controller1}.Controller1.speed_me",
+      "{Controller2}.Controller2.speed_prec"
+    ],
+    "{SimpleCar1}.SimpleCar1.x": [
+      "{Controller1}.Controller1.in_x",
+      "{Controller2}.Controller2.in_x_prec"
+    ],
+    "{Controller1}.Controller1.accdes": [
+      "{Controller2}.Controller2.acc_prec",
+      "{SimpleCar1}.SimpleCar1.accel"
+    ],
+    "{Controller2}.Controller2.accdes": [
+      "{SimpleCar2}.SimpleCar2.accel",
+      "{Controller3}.Controller3.acc_prec"
+    ],
+    "{SimpleCar2}.SimpleCar2.speed": [
+      "{Controller2}.Controller2.speed_me",
+      "{Controller3}.Controller3.speed_prec"
+    ],
+    "{SimpleCar2}.SimpleCar2.x": [
+      "{Controller2}.Controller2.in_x",
+      "{Controller3}.Controller3.in_x_prec"
+    ],
+    "{Controller3}.Controller3.accdes": [
+      "{SimpleCar3}.SimpleCar3.accel"
+    ],
+    "{SimpleCar3}.SimpleCar3.speed": [
+      "{Controller3}.Controller3.speed_me"
+    ],
+    "{SimpleCar3}.SimpleCar3.x": [
+      "{Controller3}.Controller3.in_x"
+    ],
+    "{LeadCar}.LeadCar.accel": [
+      "{Controller1}.Controller1.acc_leader",
+      "{Controller2}.Controller2.acc_leader",
+      "{Controller3}.Controller3.acc_leader",
+      "{Controller1}.Controller1.acc_prec"
+    ],
+    "{LeadCar}.LeadCar.speed": [
+      "{Controller1}.Controller1.speed_leader",
+      "{Controller2}.Controller2.speed_leader",
+      "{Controller3}.Controller3.speed_leader",
+      "{Controller1}.Controller1.speed_prec"
+    ],
+    "{LeadCar}.LeadCar.x": [
+      "{Controller1}.Controller1.in_x_leader",
+      "{Controller2}.Controller2.in_x_leader",
+      "{Controller3}.Controller3.in_x_leader",
+      "{Controller1}.Controller1.in_x_prec"
+    ]
+  },
+  "parameters": {
+    "{SimpleCar1}.SimpleCar1.v0": 5,
+    "{SimpleCar1}.SimpleCar1.x0": 25,
+    "{Controller1}.Controller1.targetDistance": 15,
+    "{Controller2}.Controller2.targetDistance": 15,
+    "{SimpleCar2}.SimpleCar2.x0": 15,
+    "{SimpleCar2}.SimpleCar2.v0": 5,
+    "{Controller3}.Controller3.targetDistance": 15,
+    "{SimpleCar3}.SimpleCar3.x0": 5,
+    "{SimpleCar3}.SimpleCar3.v0": 5,
+    "{LeadCar}.LeadCar.simple_car.x0": 40,
+    "{LeadCar}.LeadCar.simple_car.v0": 10
+  },
+  "algorithm": {
+    "type": "fixed-step",
+    "size": 0.1
+  },
+  "modelSwaps": {
+    "Controller1": {
+      "swapInstance": "c1",
+      "stepCondition": "(true)",
+      "swapCondition": "(true)",
+      "swapConnections": {
+        "{C1}.c1.accdes": [
+      		"{Controller2}.Controller2.acc_prec",
+      		"{SimpleCar1}.SimpleCar1.accel"
+    	],
+    	"{SimpleCar1}.SimpleCar1.speed": [
+	      "{C1}.c1.speed_me"
+	],
+	"{SimpleCar1}.SimpleCar1.x": [
+	      "{C1}.c1.in_x"
+	],
+	"{LeadCar}.LeadCar.accel": [
+      "{C1}.c1.acc_leader",
+      "{C1}.c1.acc_prec"
+    ],
+    "{LeadCar}.LeadCar.speed": [
+      "{C1}.c1.speed_leader",
+      "{C1}.c1.speed_prec"
+    ],
+    "{LeadCar}.LeadCar.x": [
+      "{C1}.c1.in_x_leader",
+      "{C1}.c1.in_x_prec"
+    ]
+      }
+    }
+  },
+  "modelTransfers": {
+    "LeadCar": "LeadCar",
+    "SimpleCar1": "SimpleCar1",
+    "Controller1": "Controller1",
+    "Controller2": "Controller2"
+  }
+}

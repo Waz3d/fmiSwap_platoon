@@ -1,0 +1,4 @@
+protobuf==3.17.3 
+zmq
+pandas
+matplotlib

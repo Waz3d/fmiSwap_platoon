@@ -1,0 +1,4 @@
+<events>
+    <event id="id-A" when="t&gt;=20.0"> 
+    </event>
+</events>
