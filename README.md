@@ -1,5 +1,7 @@
 Credit goes to "Dynamic Runtime Integration of New Models in Digital Twins" [H. Ejersbo, K. Lausdahl, M. Frasheri, L. Esterle] for developing and explaining the fmiSwap artifact. This repository contains modifications made to test the fmiSwap artifact with a different case study.
 
+## Remember to read the pdf fmiSwap-withQuestions.pdf!
+
 ## Clone this repo
 
 Clone this repo locally
