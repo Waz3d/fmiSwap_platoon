@@ -8,7 +8,11 @@ Clone this repo locally
 $ git clone https://github.com/Waz3d/fmiSwap_platoon
 ```
 
-Change to the repo directory before going to the next step.
+Change to the repo directory before going to the next step:
+
+```bash
+$ cd fmiSwap_platoon
+```
 
 ## Build the image
 
