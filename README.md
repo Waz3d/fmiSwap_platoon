@@ -11,7 +11,7 @@ In order to quickly run the experiment and produce the results of the artefact p
 Clone this repo locally
 
 ```bash
-$ git clone https://github.com/lausdahl/SEAMS2023Artefact-fmiSWAP.git
+$ git clone https://github.com/Waz3d/fmiSwap_platoon
 ```
 
 Change to the repo directory before going to the next step.
