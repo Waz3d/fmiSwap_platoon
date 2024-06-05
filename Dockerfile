@@ -44,7 +44,7 @@ ADD Simple_car_01.fmu /work/model/
 ADD Simple_car_02.fmu /work/model/
 ADD Simple_car_03.fmu /work/model/
 ADD LeadCar.fmu /work/model/
-#ADD cacc1_mitigated.fmu /work/model/
+ADD cacc1_mitigated.fmu /work/model/
 
 ADD FaultInject.mabl /work/model/
 ADD wt_fault.xml /work/model/

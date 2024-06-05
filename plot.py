@@ -12,10 +12,10 @@ df1.to_csv("post/stage2.csv", index=False)
 df0.fillna(0, inplace=True)
 df1.fillna(0, inplace=True)
 fig, ax = plt.subplots(1, sharex=False, sharey=False)
-name1='{SimpleCar1}.SimpleCar1.x'
-name2='{SimpleCar2}.SimpleCar2.x'
-name3='{SimpleCar3}.SimpleCar3.x'
-name4='{LeadCar}.LeadCar.x'
+name1='{SC1}.SimpleCar1.x'
+name2='{SC2}.SimpleCar2.x'
+name3='{SC3}.SimpleCar3.x'
+name4='{LC}.LeadCar.x'
 ax.title.set_text('Prova')
 ax.plot(df0['time'], df0[name1])
 ax.plot(df0['time'], df0[name2])

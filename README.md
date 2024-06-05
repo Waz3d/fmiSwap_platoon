@@ -1,34 +1,20 @@
-Credit goes to "Dynamic Runtime Integration of New Models in Digital Twins" [H. Ejersbo, K. Lausdahl, M. Frasheri, L. Esterle] for developing and explaining the fmiSwap artifact. This repository contains modifications made to test the fmiSwap artifact with a different case study.
+# fmiSWAP
 
-This repository elongs to Alessio Vivani.
-The file fmiSwap-Questions.pdf contains a brief explanation of the system under analysis together with a set of questions that aim at better understanding how to properly use the fmiSwap artifact.
+This repository contains a watertank with model swap and a `Dockerfile` to build a running example using the Maestro co-orchestration engine for FMI-based co-simulation with the model swap feature including a FaultInject extension.
 
-## Remember to read the pdf fmiSwap-withQuestions.pdf!
+# Getting started - Quick setup
 
-## The test
-This repository contains a set of FMUs related to a platoon of 4 vehicles, one of which being the leader. Each vehicle, expect for the leader, is composed of 2 FMUs, one for the plant (SimpleCarX.fmu) and one for the controller (__caccAlg_X.fmu), which implements the CACC Algorithm in order to ensure that each vehicle can follow the platoon but keeping a safe distance with respect to the preceding car.
-
-In the test we created 2 multi models, found in mm1.json and mm2.json. The case study refers to a platoon that, after some time, gets attacked and through the swapFmi artifact we would like to swap to a system that has a mitigation mechanism to contrast the attacker. The attack under analysis consists in the alteration of the value of the acceleration sent by the leader to the SimpleCar1. The mitigation, implemented in cacc1_mitigated, consists simply in assuming the values obtained by the sensors to be sufficiently accurate and trustworthy, thus making it possible to simply change the value of the acceleration obtained by the leader to the value observed through the sensors.
-
-The attack should be injected using the wt_fault.xml file (yet to implent).
-
-mm2.json contains informations related to the required swap, that will change __caccAlg_01.fmu with cacc1_mitigated.fmu.
-
-## Repeat the test on your device
+In order to quickly run the experiment and produce the results of the artefact paper ("Dynamic Runtime Integration of New Models in Digital Twins" [H. Ejersbo, K. Lausdahl, M. Frasheri, L. Esterle]) do the following:
 
 ## Clone this repo
 
 Clone this repo locally
 
 ```bash
-$ git clone https://github.com/Waz3d/fmiSwap_platoon
+$ git clone https://github.com/lausdahl/SEAMS2023Artefact-fmiSWAP.git
 ```
 
-Change to the repo directory before going to the next step:
-
-```bash
-$ cd fmiSwap_platoon
-```
+Change to the repo directory before going to the next step.
 
 ## Build the image
 
